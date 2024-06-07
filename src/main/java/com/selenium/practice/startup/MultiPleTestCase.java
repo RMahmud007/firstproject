@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class MultiPleTestCase {
@@ -111,6 +112,23 @@ public class MultiPleTestCase {
     public void test14() throws InterruptedException {
         openBrowser();
         driver.findElement(By.linkText("How to sell")).click();
+        waitFor(10);
+       WebElement element = driver.findElement(By.xpath("//h1[text()='How to sell']"));
+     String text = element.getText();
+
+     //String text =  driver.findElement(By.xpath("//h1[text()='How to sell']")).getText();
+
+
+        System.out.println(text);
+
+       Assert.assertEquals(text,"How to selll");
+
+    /*    if(text.equals("How to sell")){
+            System.out.println("It matched");
+        }else {
+            System.out.println("it didn't match");
+        }*/
+
         closeBrowser();
     }
     @Test(priority = 15)
@@ -147,6 +165,16 @@ public class MultiPleTestCase {
     public void test20() throws InterruptedException {
         openBrowser();
         driver.findElement(By.linkText("Developers")).click();
+        closeBrowser();
+    }
+
+    @Test(priority = 20)
+    public void test21() throws InterruptedException {
+        openBrowser();
+        WebElement element = driver.findElement(By.id("gh-ac"));
+
+        String data = element.getAttribute("name");
+        System.out.println(data);
         closeBrowser();
     }
 }
