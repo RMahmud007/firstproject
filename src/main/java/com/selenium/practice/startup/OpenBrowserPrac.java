@@ -5,21 +5,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class OpenBrowser {
+public class OpenBrowserPrac {
     private static WebDriver driver;
-    public static void openBrowser(String browserName){
-        if(browserName.equals("Firefox")){
-            driver=new FirefoxDriver();
+
+    public static void openBrowser(String browserName) {
+        if (browserName.equals("Firefox")) {
+            driver = new FirefoxDriver();
             driver.get("https://www.ebay.com");
-        }else {
-            driver=new ChromeDriver();
+        } else {
+            driver = new ChromeDriver();
             driver.get("https://www.ebay.com");
         }
     }
+
     public static void closeBrowser() throws InterruptedException {
         Thread.sleep(3000);
         driver.quit();
     }
+
     public static void main(String[] args) throws InterruptedException {
         openBrowser("Firefox");
 
@@ -28,7 +31,6 @@ public class OpenBrowser {
         driver.findElement(By.xpath(" //input[@id='gh-ac']")).sendKeys("JAVA");
         Thread.sleep(3000);
         driver.findElement(By.xpath(" //input[@id='gh-btn']")).click();
-
 
 
         closeBrowser();
