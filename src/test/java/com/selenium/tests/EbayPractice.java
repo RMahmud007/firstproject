@@ -18,7 +18,8 @@ import static java.time.temporal.ChronoUnit.SECONDS;
 
 public class EbayPractice extends TestBase {
 
-    // comment from Zann
+    // comment from Zann , anik made changes
+
     @Test (priority = 1,enabled = false)
     public void testEbay1(){
         clickUsingXpath("//button[@id='gh-shop-a']");
