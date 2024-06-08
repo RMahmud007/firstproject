@@ -18,8 +18,7 @@ import static java.time.temporal.ChronoUnit.SECONDS;
 
 public class EbayPractice extends TestBase {
 
-    // anik made changes
-
+    // comment from Zann , anik made changes
 
     @Test (priority = 1,enabled = false)
     public void testEbay1(){
